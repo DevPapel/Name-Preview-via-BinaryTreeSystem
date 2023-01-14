@@ -3,3 +3,32 @@ class BinarySearchTree:
         self.data = data
         self.left = None
         self.right = None
+    
+    def add_child(self, data):
+        if data == self.data:
+            return
+        if data < self.data:
+            if self.left:
+                self.left.add_child(data)
+            else:
+                self.left = BinarySearchTree(data)
+        else:
+            if self.right:
+                self.right.add_child(data)
+            else:
+                self.right = BinarySearchTree(data)
+
+def build_tree(elements):
+    root = BinarySearchTree(elements[0])
+
+    for i in range(1,len(elements)):
+        root.add_child(elements[i])
+
+    return root
+
+if __name__ == '__main__':
+    numbers = ["J", "E", "F", "E", "R", "S", "O", "N", "A", "T", "A", "D", "I", "O", "S"]
+
+
+    numbers_tree = build_tree(numbers)
+    print("Input name:",numbers)
