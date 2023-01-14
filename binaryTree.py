@@ -57,8 +57,21 @@ def tree_maker(elements):
         root.add_child(elements[i])
     return root
 
-name = ["J", "E", "F", "E", "R", "S", "O", "N", "A", "T", "A", "D", "I", "O", "S"]
-name_tree = tree_maker(name)
-print("In order traversal:", name_tree.in_order_traversal())
-print("Post order traversal:", name_tree.post_order_traversal())
-print("Pre order traversal:", name_tree.pre_order_traversal())
+#name = ["J", "E", "F", "E", "R", "S", "O", "N", "A", "T", "A", "D", "I", "O", "S"]
+#name_tree = tree_maker(name)
+#print("")
+#print("Input name:", name)
+#print("\nIn order traversal:", name_tree.in_order_traversal())
+#print("\nPost order traversal:", name_tree.post_order_traversal())
+#print("\nPre order traversal:", name_tree.pre_order_traversal())
+
+print("\nWelcome to the Name Preview via Binary Tree System")
+print("Please write your name for you to see the preview of your name via BinaryTreeSystem")
+name = input("Enter your Name: ")
+name_to_list = list(name.replace(" ",""))
+name_tree = tree_maker(name_to_list)
+print("Your Name:", name)
+print("\nIn-order traversal preview:", name_tree.in_order_traversal())
+print("\nPost-order traversal preview:", name_tree.post_order_traversal())
+print("\nPre-order traversal preview:", name_tree.pre_order_traversal())
+
