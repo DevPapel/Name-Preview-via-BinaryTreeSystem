@@ -18,17 +18,14 @@ class BinarySearchTree:
             else:
                 self.right = BinarySearchTree(data)
 
-def build_tree(elements):
-    root = BinarySearchTree(elements[0])
+    def in_order_traversal(self):
+        elements = []
+        if self.left:
+            elements += self.left.in_order_traversal()
+        elements.append(self.data)
 
-    for i in range(1,len(elements)):
-        root.add_child(elements[i])
+        if self.right:
+            elements += self.right.in_order_traversal()
+        return elements
 
-    return root
-
-if __name__ == '__main__':
-    numbers = ["J", "E", "F", "E", "R", "S", "O", "N", "A", "T", "A", "D", "I", "O", "S"]
-
-
-    numbers_tree = build_tree(numbers)
-    print("Input name:",numbers)
+    
