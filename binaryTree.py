@@ -57,6 +57,13 @@ def tree_maker(elements):
         root.add_child(elements[i])
     return root
 
+def cont():
+    print("")
+    continue_prog = input("Do you want to continue? [Y/N]: ").upper()
+    if continue_prog != "Y":
+        print("Thank you for using this application!")
+        exit()
+
 #name = ["J", "E", "F", "E", "R", "S", "O", "N", "A", "T", "A", "D", "I", "O", "S"]
 #name_tree = tree_maker(name)
 #print("")
@@ -65,13 +72,14 @@ def tree_maker(elements):
 #print("\nPost order traversal:", name_tree.post_order_traversal())
 #print("\nPre order traversal:", name_tree.pre_order_traversal())
 
-print("\nWelcome to the Name Preview via Binary Tree System")
-print("Please write your name for you to see the preview of your name via BinaryTreeSystem")
-name = input("Enter your Name: ")
-name_to_list = list(name.replace(" ",""))
-name_tree = tree_maker(name_to_list)
-print("Your Name:", name)
-print("\nIn-order traversal preview:", name_tree.in_order_traversal())
-print("\nPost-order traversal preview:", name_tree.post_order_traversal())
-print("\nPre-order traversal preview:", name_tree.pre_order_traversal())
-
+while True:
+    print("\nWelcome to the Name Preview via Binary Tree System")
+    print("Please write your name for you to see the preview of your name via BinaryTreeSystem")
+    name = input("Enter your Name: ")
+    name_to_list = list(name.replace(" ",""))
+    name_tree = tree_maker(name_to_list)
+    print("\nYour Name:", name)
+    print("\nIn-order traversal preview:", name_tree.in_order_traversal())
+    print("\nPost-order traversal preview:", name_tree.post_order_traversal())
+    print("\nPre-order traversal preview:", name_tree.pre_order_traversal())
+    cont()
